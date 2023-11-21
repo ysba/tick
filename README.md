@@ -9,6 +9,16 @@ Simple helper for embedded bare-metal applications dealing with multiple time-de
 #define TASK_2_INTERVAL     300     // ms
 #define TASK_3_INTERVAL     1000    // ms
 
+
+void isr_1_ms() {
+
+    // function tick_increment needs to be called somewhere
+    // that happens once every 1 ms (ie. timer interrupt)
+
+    tick_increment();
+}
+
+
 void main() {
     tick_t timer_task_1;
     tick_t timer_task_2;
@@ -58,5 +68,5 @@ void main() {
 
 ## Change log
 
-*  ``v0.0.1``
+* ``v0.0.1``
   * Initial
